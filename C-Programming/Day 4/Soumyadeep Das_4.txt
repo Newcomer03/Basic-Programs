@@ -1,0 +1,569 @@
+Program1:-
+Without Pointer:
+#include<stdio.h>
+//the program might seem extremely drawn out but it is highly versatile
+float power(float,float);
+
+main()
+{
+	float a,b;		//used to store the values given by user
+	float res;		//used to store the result
+	printf("Enter the values of a and b\n");
+	scanf("%f%f",&a,&b);
+	
+	if(b==0)
+	{
+		int b1 = b;		//used to store the float b in int format
+		printf("%.2f raised to the power %d is 1",a,b1);
+	}
+	
+	else
+	{
+		res = power(a,b);	//calling the function
+		printf("%.2f raised to the power %.2f is = %f",a,b,res);
+	}
+}
+
+float power(float n1, float n2)
+{
+	//this function is the main mechanism of the program
+	int c;		//counter variable
+	float r = 1.000000; //used to store and return the result
+	if(n2<0)
+	{//this block executes if given value of b is negative
+		c = -1;
+		n1 = 1/n1;
+		while(c>=n2)
+		{
+			r = r*n1;
+			c--;	
+		}
+	}
+	else
+	{//this block executes if given value of b is positive
+		c = 1;
+		while(c<=n2)
+		{
+			r = r*n1;
+			c++;	
+		}
+	}	
+		
+	return(r);	//returns the result
+}
+
+With Pointer:
+#include<stdio.h>
+//the program might seem extremely drawn out but it is highly versatile
+void power(float *,float *, float *);
+
+main()
+{
+	float a,b;		//used to store the values given by user
+	float res;		//used to store the result
+	printf("Enter the values of a and b\n");
+	scanf("%f%f",&a,&b);
+	
+	if(b==0)
+	{
+		int b1 = b;		//used to store the float b in int format
+		printf("%.2f raised to the power %d is 1",a,b1);
+	}
+	
+	else
+	{
+		power(&a,&b,&res);	//calling the function
+		printf("%.2f raised to the power %.2f is = %f",a,b,res);
+	}
+}
+
+void power(float *n1, float *n2, float *res)
+{
+	//this function is the main mechanism of the program
+	int c;		//counter variable
+	float r = 1.000000; //used to store and return the result
+	if(*n2<0)
+	{//this block executes if given value of b is negative
+		c = -1;
+		*n1 = 1/(*n1);
+		while(c>=*n2)
+		{
+			r = r*(*n1);
+			c--;	
+		}
+	}
+	else
+	{//this block executes if given value of b is positive
+		c = 1;
+		while(c<=*n2)
+		{
+			r = r*(*n1);
+			c++;	
+		}
+	}	
+	
+	*res = r;		
+}
+
+Program2:-
+Without Pointer:
+#include<stdio.h>
+
+float area_circle(int);
+
+main()
+{//this block is used to take the input and give final output
+	int r;	//used to store the radius of the circle
+	float area;	//used to store the area of the circle
+	printf("Enter the radius of the circle\n");
+	scanf("%d",&r);
+	
+	if(r<0)
+	{
+		printf("Radius cannot be Negative");
+	}
+	else
+	{
+	area = area_circle(r);	//function call
+	printf("The area of the circle is = %.3f",area);
+	}
+}
+
+float area_circle(int r1)
+{//this block is used for claculating the area of the circle
+	float ar;
+	ar = 3.14 * r1 * r1;
+	return(ar);
+}
+
+With Pointer:
+#include<stdio.h>
+
+void area_circle(int *, float *);
+
+main()
+{//this block is used to take the input and give final output
+	int r;	//used to store the radius of the circle
+	float area;	//used to store the area of the circle
+	printf("Enter the radius of the circle\n");
+	scanf("%d",&r);
+	
+	if(r<0)
+	{
+		printf("Radius cannot be Negative");
+	}
+	else
+	{
+	area_circle(&r,&area);	//function call
+	printf("The area of the circle is = %.3f",area);
+	}
+}
+
+void area_circle(int *r1, float *ar)
+{//this block is used for claculating the area of the circle
+	float ar1;
+	ar1 = 3.14 * (*r1) * (*r1);
+	*ar = ar1;
+}
+Program3:-
+Without Pointer:
+#include<stdio.h>
+
+void check(char);
+
+main()
+{
+	char c;
+	printf("Enter the Letter\n");
+	scanf("%c",&c);
+	
+	check(c);
+}
+
+void check(char ch)
+{
+	int a = ch;
+	if(((a>=65)&&(a<=90) || (a>=97)&&(a<=122)))
+	{
+		if((ch=='a') ||  (ch=='e') ||  (ch=='i') ||  (ch=='o') ||  (ch=='u') ||  (ch=='A') ||  (ch=='E') ||  (ch=='I') ||  (ch=='O') ||  (ch=='U'))
+		{
+			printf("'%c' is a Vowel",ch);
+		}
+		else
+		{
+			printf("'%c' is a Consonant",ch);
+		}
+	}
+	else
+	{
+		printf("'%c' is not a letter",ch);
+	}
+}
+
+With Pointer:
+#include<stdio.h>
+
+void check(char *);
+
+main()
+{
+	char c;
+	printf("Enter the Letter\n");
+	scanf("%c",&c);
+	
+	check(&c);
+}
+
+void check(char *ch)
+{
+	int a = *ch;
+	if(((a>=65)&&(a<=90) || (a>=97)&&(a<=122)))
+	{
+		if((*ch=='a') ||  (*ch=='e') ||  (*ch=='i') ||  (*ch=='o') ||  (*ch=='u') ||  (*ch=='A') ||  (*ch=='I') ||  (*ch=='O') ||  (*ch=='U'))
+		{
+			printf("'%c' is a Vowel",*ch);
+		}
+		else
+		{
+			printf("'%c' is a Consonant",*ch);
+		}
+	}
+	else
+	{
+		printf("'%c' is not a letter",*ch);
+	}
+}
+
+Program4:-
+Without Pointer:
+#include<stdio.h>
+
+int checkPrime(int);
+
+main()
+{
+	int n,count;
+	
+	printf("Enter the Number\n");
+	scanf("%d",&n);
+	
+	count = checkPrime(n);
+	if(count==2)
+	{
+		printf("It is a Prime number");
+	}
+	
+	else
+	{
+		printf("It is not a Prime number");
+	}
+	
+}
+
+int checkPrime(int no)
+{
+	int x, count=0;
+	x=1;
+	
+	while(x<=no)
+	{
+		if((no%x)==0)
+		{
+			count++;
+		}
+		x++;
+	}
+	return(count);
+}
+
+With Pointer:
+#include<stdio.h>
+
+void checkPrime(int *, int *);
+
+main()
+{
+	int n,c;
+	
+	printf("Enter the Number\n");
+	scanf("%d",&n);
+	
+	checkPrime(&n,&c);
+	if(c==2)
+	{
+		printf("It is a Prime number");
+	}
+	
+	else
+	{
+		printf("It is not a Prime number");
+	}
+	
+}
+
+void checkPrime(int *no,int *cnt)
+{
+	int x, count=0;
+	x=1;
+	
+	while(x<=*no)
+	{
+		if((*no%x)==0)
+		{
+			count++;
+		}
+		x++;
+	}
+	*cnt = count;
+}
+
+Program5:-
+Without Pointer:
+#include<stdio.h>
+#include<math.h>
+
+float comp_Interest(float,float,float,float);
+
+main()
+{
+	float a,p,r,t,n;
+	printf("Enter the Principal Amount\n");
+	scanf("%f",&p);
+	printf("Enter the Period in Years\n");
+	scanf("%f",&t);
+	printf("Enter the number of times the interest is compounded per period\n");
+	scanf("%f",&n);
+	printf("Enter the Rate of Interest\n");
+	scanf("%f",&r);
+	
+	a = comp_Interest(p,r,t,n);
+	
+	printf("The Compund Interest is = %f",a);
+}
+
+float comp_Interest(float p,float r,float t,float n)
+{
+	float amt;
+	r = r/100;
+	amt = p * pow((1+(r/n)),(n*t));
+	return(amt);
+}
+
+With Pointer:
+#include<stdio.h>
+#include<math.h>
+
+void comp_Interest(float,float,float,float,float *);
+
+main()
+{
+	float a,p,r,t,n;
+	printf("Enter the Principal Amount\n");
+	scanf("%f",&p);
+	printf("Enter the Period in Years\n");
+	scanf("%f",&t);
+	printf("Enter the number of times the interest is compounded per period\n");
+	scanf("%f",&n);
+	printf("Enter the Rate of Interest\n");
+	scanf("%f",&r);
+	
+	comp_Interest(p,r,t,n,&a);
+	
+	printf("The Compund Interest is = %f",a);
+}
+
+void comp_Interest(float p,float r,float t,float n,float *a)
+{
+	float amt;
+	r = r/100;
+	amt = p * pow((1+(r/n)),(n*t));
+	*a = amt;
+}
+
+Program6:-
+Without Pointer:
+#include<stdio.h>
+
+int factorial(int);
+
+main()
+{
+	int num,fact;
+	
+	printf("Enter the number\n");
+	scanf("%d",&num);
+	
+	fact = factorial(num);
+	printf("The factorial of %d is %d",num,fact);
+}
+
+int factorial(int num)
+{
+	int x,fact=1;
+		
+	for(x=num;x>=1;x--)
+	{
+		fact = fact * x;
+	}
+	
+	return(fact);
+}
+
+With Pointer:
+#include<stdio.h>
+
+void factorial(int ,int *);
+
+main()
+{
+	int num,fact;
+	
+	printf("Enter the number\n");
+	scanf("%d",&num);
+	
+	factorial(num,&fact);
+	printf("The factorial of %d is %d",num,fact);
+}
+void factorial(int num,int *fact)
+{
+	int x;
+	*fact = 1;
+		
+	for(x=num;x>=1;x--)
+	{
+		*fact = *fact * x;
+	}
+	
+}
+
+Program7:-
+Without Pointer:
+#include<stdio.h>
+
+int gcd(int,int);
+
+main()
+{
+	int n1,n2,res;
+	
+	printf("Enter the numbers\n");
+	scanf("%d%d",&n1,&n2);
+	
+	res = gcd(n1,n2);
+	printf("The GCD of %d and %d is %d",n1,n2,res);
+}
+
+int gcd(int n1,int n2)
+{//here we use a new way of finding GCD or HCF
+	
+	while(n1!=n2)
+	{
+		if(n1>n2)
+		{
+			n1 = n1-n2;
+		}
+		else
+		{
+			n2 = n2-n1;
+		}
+		
+	}
+	
+	return(n2);		
+}
+
+With Pointer:
+#include<stdio.h>
+
+void gcd(int ,int ,int *);
+
+main()
+{
+	int n1,n2,res;
+	
+	printf("Enter the numbers\n");
+	scanf("%d%d",&n1,&n2);
+	
+	gcd(n1,n2,&res);
+	printf("The GCD of %d and %d is %d",n1,n2,res);
+}
+
+void gcd(int n1,int n2,int *res)
+{//here we use a new way of finding GCD or HCF
+	
+	while(n1!=n2)
+	{
+		if(n1>n2)
+		{
+			n1 = n1-n2;
+		}
+		else
+		{
+			n2 = n2-n1;
+		}
+		
+	}
+	*res = n2;	
+}
+
+Program8:-
+Without Pointer:
+#include<stdio.h>
+#include<math.h>
+
+int binary(int);
+
+main()
+{//this block only takes the input
+	int no;
+	printf("Enter the Number\n");
+	scanf("%d",&no);
+	binary(no);	//calling the functin
+}
+
+int binary(int no)
+{//this block converts decimal to binary
+	int d;
+	int sum = 0;	//it stores the binary value
+	int cnt = 0;
+	
+	while(no>0)
+	{
+		d = no%2;
+		sum = sum+d*pow(10,cnt);
+		no = no/2;
+		cnt++;
+	}
+	printf("The Binary Code for %d is %d",no,sum);
+}
+
+With Pointer:
+#include<stdio.h>
+#include<math.h>
+
+void binary(int,int *);
+
+main()
+{//this block only takes the input
+	int no,bin;
+	printf("Enter the Number\n");
+	scanf("%d",&no);
+	binary(no,&bin);	//calling the function
+	printf("The Binary Code for %d is %d",no,bin);
+}
+
+void binary(int no,int *bin)
+{//this block converts decimal to binary
+	int d;
+	int sum = 0;
+	int cnt = 0;
+	
+	while(no>0)
+	{
+		d = no%2;
+		sum = sum+d*pow(10,cnt);
+		no = no/2;
+		cnt++;
+	}
+	*bin = sum;		//stores the binary number
+}
