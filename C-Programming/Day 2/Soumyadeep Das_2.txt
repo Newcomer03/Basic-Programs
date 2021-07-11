@@ -1,0 +1,233 @@
+Program1:-
+#include<stdio.h>
+											
+main()
+{
+	int a,b,c,d;
+	float x;
+	printf("\nEnter the Numbers\n");
+	scanf("%d%d%d%d",&a,&b,&c,&d);
+	
+	if((c-d)==0)
+	printf("The denominator cannot be Zero");
+	
+	else
+	{
+		x = (a-b)/(c-d);
+		printf("The Value is = %f",x);
+	}
+	
+
+}
+
+Program2:-
+#include<stdio.h>
+											
+main()
+{
+	double x;
+	int a,b;
+	
+	printf("Enter the fractional value\n");
+	scanf("%lf",&x);
+	
+	a = x;
+	b = a+1;
+	
+	printf("The Floor and Ceiling values of %lf are %d and %d",x,a,b);
+	
+}
+
+Program3:-
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  double a, b, c, d;
+  double root1, root2;
+
+	//taking input
+	
+  printf("Enter a, b and c where a*x*x + b*x + c = 0\n");
+  scanf("%lf%lf%lf", &a, &b, &c);
+  
+  d = b*b - 4*a*c;
+  
+	if((a==0)&&(b==0))
+	{
+		printf("No Solution");
+	}
+	
+	else if(a==0)
+	{
+		root1 = (-c)/b;
+		printf("The only root is = %lf",root1);
+	}
+	
+	else if(d==0)
+	{
+		printf("There are no real roots");
+	}
+	
+	else
+	{
+		root1 = (-b + sqrt(d))/(2*a);
+  		root2 = (-b - sqrt(d))/(2*a);
+
+  		printf("First root = %.2lf\n", root1);
+  		printf("Second root = %.2lf\n", root2);
+  	}
+  
+}
+
+Program4:-
+#include<stdio.h>
+main()
+{
+	int a,b,c;
+	printf("\nEnter the 3 sides of the triangle\n");
+	scanf("%d%d%d",&a,&b,&c);
+	
+	if(((a+b)>=c) || ((b+c)>= a) || ((c+a)>=b))
+	{
+		if((a==b)&&(b==c))
+		printf("It is an Equilateral Triangle");
+		
+		else if((a==b)||(a==c)||(b==c))
+		printf("It is an Isoceles Triangle");
+		
+		else if((a*a + b*b == c*c) || (a*a + c*c == b*b) || (b*b + c*c == a*a))
+		printf("It is a Right Angled Triangle");
+		
+		else
+		printf("It is a Scalene Triangle");
+	}
+	
+	else
+	printf("The Triangle is not valid");
+	
+}
+
+Program5:-
+#include<stdio.h>
+main()
+{
+	int a,b,c;
+	printf("\nEnter the 3 numbers\n");
+	scanf("%d%d%d",&a,&b,&c);
+	
+	if((a>b)&&(a>c))
+	{
+		if(b>c)
+		printf("\n%d %d %d",a,b,c);
+		
+		else
+		printf("\n%d %d %d",a,c,b);
+	}
+	
+	else if((b>a)&&(b>c))
+	{
+		if(c>a)
+		printf("\n%d %d %d",b,c,a);
+		
+		else
+		printf("\n%d %d %d",b,a,c);
+	}
+	
+	else if((c>b)&&(c>a))
+	{
+		if(b>a)
+		printf("\n%d %d %d",c,b,a);
+		
+		else
+		printf("\n%d %d %d",c,a,b);
+	}
+	
+	else
+	printf("2 or more numbers are equal");
+}
+
+Program6:-
+#include<stdio.h>
+											
+main()
+{
+	char x;
+	
+	printf("Enter the Character\n");
+	scanf("%c",&x);
+	
+	if((x=='a')|| (x=='e')|| (x=='i')|| (x=='o')|| (x=='u')|| (x=='A')|| (x=='E')|| (x=='I')|| (x=='O')|| (x=='U'))
+	printf("The Character '%c' is a Vowel",x);
+	
+	else
+	printf("The Character '%c' is a Constant",x);
+	
+}
+
+Program7:-
+#include<stdio.h>
+											
+main()
+{
+	int n1,n2,res;
+	char x;
+	printf("Enter the operator and numbers\n");	//asking for the input
+	scanf("%c%d%d",&x,&n1,&n2);
+
+	switch(x)
+	{
+		case '+':
+			res = n1+n2;
+			printf("%d+%d=%d",n1,n2,res);
+			break;
+		case '-':
+			res = n1-n2;
+			printf("%d-%d=%d",n1,n2,res);
+			break;
+			
+		case '*':
+			res = n1*n2;
+			printf("%d*%d=%d",n1,n2,res);
+			break;
+		
+		case '/':
+			res = n1/n2;
+			printf("%d/%d=%d",n1,n2,res);
+			break;
+		
+		case '%':
+			res = n1%n2;
+			printf("%d%c%d=%d",n1,x,n2,res);
+			break;
+			
+		default:
+			printf("Invalid Operator");
+				
+	}
+	
+}
+
+Program8:-
+#include<stdio.h>
+											
+main()
+{
+	int x;
+	
+	printf("Enter the Pressure Reading\n");
+	scanf("%d",&x);
+	
+	if((x==2)||(x==3))
+	printf("The temperature is 500 degrees");
+	
+	else if((x==4))
+	printf("The temperature is 600 degrees");
+	
+	else if((x==5)||(x==6)||(x==7))
+	printf("The temperature is 700 degrees");	
+	
+	else
+	printf("The temperature is 300 degrees");	
+	
+}

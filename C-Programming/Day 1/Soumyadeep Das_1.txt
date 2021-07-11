@@ -1,0 +1,170 @@
+Q1. WAP to enter the two sides of a rectangle and calculate the radius of the circle whose area is same as the rectangle.
+Program:-
+
+#include<stdio.h>
+#include<math.h>		//we include the <math.h> package to use the sqrt() function
+main()
+{
+	int s1,s2,area;
+	double radius;
+	printf("\nEnter the length of 2 sides of the rectangle\n");
+	scanf("%d%d",&s1,&s2);
+	
+	area= s1 * s2;
+	printf("\nThe Area of the Rectangle is = %d",area);			//optional
+	
+	radius = area/(3.14);
+	radius = sqrt(radius);
+	printf("\nThe Radius of the Circle whose area is same as the Rectangle is = %lf",radius);
+}
+
+Q2. WAP to calculate the gross salary of an employee by giving basic salary. Also calculate DA (60%) HRA (15%), Conveyance (15%), Medical (10%).  
+Gross salary = Basic + DA + Conveyance + Medical
+Program:-
+
+#include<stdio.h>
+
+main()
+{
+	float bs;			//bs stands for basic salary
+	float gs;			//gs stands for gross salary
+	float da,hra,con,med;
+		
+	printf("\nPlease enter the Basic Salary of the Employee\n");
+	scanf("%f",&bs);
+	
+	da = bs*(0.60);		//da is 60% of the basic salary
+	hra = bs*(0.15);	//hra is 15% of the basic salary
+	con = bs*(0.15);	//con stands for conveyance. It also is 15% of the basic salary
+	med = bs*(0.10);	//med stands for medical. It is 10% of the basic salary
+	
+	gs = bs + da + hra + con + med;
+	
+	printf("\nThe Gross Salary of the employee is %f",gs);
+}
+ 
+Q3. Enter two numbers and find the cube of the larger number (use ternary operator).
+Program:-
+
+#include<stdio.h>
+
+main()
+{
+	int a,b,cube;
+	printf("\nEnter the Numbers\n");
+	scanf("%d%d",&a,&b);
+	
+	cube = (a>b)?a:b;
+	cube = cube * cube * cube;
+	
+	printf("\nThe cube of the Larger number is = %d",cube);
+}
+
+Q4. Enter a 3-digit number and calculate the sum of digits. 
+Program:-
+
+#include<stdio.h>
+
+main()
+{
+	int a,sum;
+	printf("\nEnter the 3-digit Number\n");
+	scanf("%d",&a);
+	
+	sum = a%10;
+	a = a/10;
+	sum = sum + a%10;
+	a = a/10;
+	sum = sum + a;
+		
+	printf("\nThe sum of each digit of the given number is = %d",sum);
+}
+
+Q5. Enter the Principal amount, Time (in days) and Rate of Interest, then calculate the simple interest earned and the total amount payable. 
+Program:-
+
+#include<stdio.h>
+
+main()
+{
+	float pa;			//bs stands for principal amount
+	float time;			//time in days
+	int roi;			//roi stands for rate of interest
+	float si;			//si stands for simple interest
+	float tap;			//tap stands for total amount payable
+		
+	printf("\nPlease enter the Principal Amount\n");
+	scanf("%f",&pa);
+	
+	printf("\nPlease enter the Time in days\n");
+	scanf("%f",&time);
+	
+	printf("\nPlease enter the Rate of Interest\n");
+	scanf("%d",&roi);
+	
+	si = (pa * (time/365) * roi)/100;
+	printf("\nThe Simple Interest is %f",si);
+	
+	tap = pa + si;
+	printf("\nThe total amount payable is %f",tap);
+}
+
+Q6. WAP to find roots of a quadratic equation. 
+Program:-
+
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+  int a, b, c, d;
+  double root1, root2;
+
+	//taking input
+	
+  printf("Enter a, b and c where a*x*x + b*x + c = 0\n");
+  scanf("%d%d%d", &a, &b, &c);
+
+  d = b*b - 4*a*c;
+
+  root1 = (-b + sqrt(d))/(2*a);
+  root2 = (-b - sqrt(d))/(2*a);
+
+  printf("First root = %.2lf\n", root1);
+  printf("Second root = %.2lf\n", root2);
+  
+}
+
+Q7. WAP to find the smallest between three numbers using conditional operator. (In one line) 
+Program:-
+
+#include<stdio.h>
+
+main()
+{
+	int a,b,c;			//stores the three given numbers
+	int smallest;			//stores the smallest numbers
+	
+	printf("\nEnter the Numbers\n");
+	scanf("%d%d%d",&a,&b,&c);
+	
+	smallest = (a<b)?(a<c)?a:c:(b<c)?b:c;		//conditional operator
+	
+	printf("\nThe smallest number among the three is = %d",smallest);
+}
+
+Q8. WAP to convert Fahrenheit to Celsius.
+Program:-
+
+#include<stdio.h>
+
+main()
+{
+	double f;
+	double c;
+	printf("\nEnter the Temperature in Fahrenheit\n");
+	scanf("%lf",&f);
+	
+	c = (f-32)*(5.0/9.0);		//conversion from fahrenheit to celsius
+	
+	printf("\nThe Temperature in Celsius is = %lf",c);
+}
