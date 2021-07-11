@@ -1,0 +1,1 @@
+The class Word1 prints all the words in a string that don't have a vowel
