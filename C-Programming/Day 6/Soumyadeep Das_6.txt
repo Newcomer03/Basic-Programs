@@ -1,0 +1,355 @@
+Program1:-
+#include<stdio.h>
+
+main()
+{
+	int i,vcount=0,ccount=0;
+	char str[20],x;
+	printf("Enter a word\n");
+	scanf("%s",str);
+		
+	for(i=0;str[i]!='\0';i++)
+	{
+		x = str[i];
+		if(x=='a' || x=='e' || x=='i' || x=='o' || x=='u' || x=='A' || x=='E' || x=='I' || x=='O' || x=='U')
+		{
+			vcount++;
+		}
+		else
+		{
+			ccount++;
+		}
+	}
+	
+	printf("The number of vowels present are: %d",vcount);
+	printf("\nThe number of consonants present are: %d",ccount);
+}
+
+Program2:-
+#include<stdio.h>
+
+int Xstrlen(char *);
+
+main()
+{
+	int i,l,count=0;
+	char str1[20],str2[20];
+	printf("Enter a word\n");
+	scanf("%s",str1);
+	l = Xstrlen(str1);
+		
+	for(i=1;str1[i-1]!='\0';i++)
+	{
+		str2[i-1] = str1[l-i];
+	}
+		
+	for(i=0;str1[i]!='\0';i++)
+	{
+		if(str2[i] != str1[i])
+		{
+			count++;
+		}
+	}
+	if(count==0)
+	{
+		printf("The given string is a Palindrome");
+	}
+	else
+	{
+		printf("The given string is not a Palindrome");
+	}
+}
+
+int Xstrlen(char *ptr)
+{
+	int len = 0;
+	while(*ptr!='\0')
+	{
+		len++;
+		ptr++;
+	}
+	return len;
+}
+
+Program3:-
+#include<stdio.h>
+
+main()
+{
+	int i,j;
+	char str1[20],str2[20],str3[40],x;
+	printf("Enter a String\n");
+	gets(str1);
+	printf("Enter another String\n");
+	gets(str2);
+		//str3 is used for the concatination process
+	for(i=0;str1[i]!='\0';i++)
+	{
+		str3[i] = str1[i];
+	}
+	
+	for(j=0;str2[j]!='\0';j++)
+	{
+		str3[i] = str2[j];
+		i++;
+	}
+	
+	printf("The New String is : \n%s",str3);
+}
+
+Program4:-
+#include<stdio.h>
+
+int Xstrlen(char *);
+
+main()
+{
+	int i,l;
+	char str1[20],str2[20];
+	printf("Enter a word\n");
+	scanf("%s",str1);
+	l = Xstrlen(str1);
+		
+	for(i=1;str1[i-1]!='\0';i++)
+	{
+		str2[i-1] = str1[l-i];
+	}
+	str2[i] = '\0';		//for storing the last character as null
+	printf("The reversed word is : %s\n",str2);
+	
+}
+
+int Xstrlen(char *ptr)
+{
+	int len = 0;
+	while(*ptr!='\0')
+	{
+		len++;
+		ptr++;
+	}
+	return len;
+}
+
+Program5:-
+#include<stdio.h>
+
+int Xstrlen(char *);
+
+main()
+{
+	int i,l1,l2,count=0;
+	char str1[20],str2[20];
+	
+	printf("Enter a string\n");
+	gets(str1);
+	printf("Enter another string\n");
+	gets(str2);
+	
+	l1 = Xstrlen(str1);
+	l2 = Xstrlen(str2);
+	
+	
+	if(l1==l2)
+	{
+		for(i=0;str1[i]!='\0';i++)
+		{
+			if(str2[i] != str1[i])
+			{
+				count++;
+			}
+		}
+		
+		if(count==0)
+		{
+			printf("The given strings are exactly Same");
+		}
+		else
+		{
+			printf("The given strings are not Same");
+		}
+	}
+	
+	else
+	{
+		printf("The given strings are not exactly Same");
+	}
+}
+
+int Xstrlen(char *ptr)
+{
+	int len = 0;
+	while(*ptr!='\0')
+	{
+		len++;
+		ptr++;
+	}
+	return len;
+}
+
+Program6:-
+#include<stdio.h>
+
+main()
+{
+	int i;
+	char str1[20],str2[20],x;
+	printf("Enter a word\n");
+	gets(str1);
+	//we only have to store a string in another string
+	for(i=0;str1[i]!='\0';i++)
+	{
+		str2[i] = str1[i];
+	}
+	/*there will be no printing on the output screen
+	it will only take a string as input*/
+}
+
+Program7:-
+#include<stdio.h>
+
+int Xstrlen(char *);
+
+main()
+{
+	int i,j,l;
+	char str[20],temp;
+	printf("Enter a string\n");
+	gets(str);
+	
+	l = Xstrlen(str);
+		
+	for(i=0;i<l-1;i++)
+	{
+		for(j=i+1;j<l;j++)
+		{
+			if(str[i]>str[j])
+			{
+				temp = str[i];
+				str[i] = str[j];
+				str[j] = temp;
+			}
+		}
+	}
+	
+	printf("The alphabetically arranged String is : %s",str);
+}
+
+int Xstrlen(char *ptr)
+{
+	int len = 0;
+	while(*ptr!='\0')
+	{
+		len++;
+		ptr++;
+	}
+	return len;
+}
+
+Program8:-
+#include<stdio.h>
+
+main()
+{
+	struct Student
+	{
+		int roll;
+		char name[50];
+		char branch[20];
+		char sec;
+		int Group;
+		float cgpa;
+		char gender;
+	} st;
+	
+	int sst,stotal;
+	
+	sst = sizeof(st);
+	
+	stotal = sizeof(st.branch) + sizeof(st.cgpa) + sizeof(st.gender) + sizeof(st.Group) + sizeof(st.name) + sizeof(st.roll) + sizeof(st.sec);
+	
+	printf("Size of the Structure is = %d\n",sst);
+	printf("Sum of sizes of all the members of the Structure is = %d\n",stotal);
+}
+
+Program9:-
+#include<stdio.h>
+
+main()
+{
+	struct Employee
+	{
+		char empId[50];
+		char fname[50];
+		char mname[50];
+		char lname[50];
+		char doj[20];
+		char desig[20];
+		char grade[20];
+		char salary[20];
+	} emp;
+	
+	printf("Enter employee ID\n");
+	gets(emp.empId);
+	printf("Enter First Name\n");
+	gets(emp.fname);
+	printf("Enter Middle Name\n");
+	gets(emp.mname);
+	printf("Enter Last Name\n");
+	gets(emp.lname);
+	printf("Enter Date of Joining\n");
+	gets(emp.doj);
+	printf("Enter Designation\n");
+	gets(emp.desig);
+	printf("Enter Grade\n");
+	gets(emp.grade);
+	printf("Enter Salary\n");
+	gets(emp.salary);
+	
+	printf("\nName : %s %s %s\n",emp.fname,emp.mname,emp.lname);
+		
+	printf("Employee ID : %s\t Date of Joining : %s\n",emp.empId,emp.doj);
+	
+	printf("Designation : %s\t Grade : %s\n",emp.desig,emp.grade);
+
+	printf("Salary : %s",emp.salary);
+	
+}
+
+Program10:-
+#include<stdio.h>
+
+main()
+{
+	struct Student
+	{
+		char name[50];
+		char group[10];
+		char sec[10];
+		char gender[20];
+	} s[10];
+	
+	int i,j;
+	for(i=0;i<10;i++)
+	{
+		printf("Enter Credentials For Student %d\n",i+1);
+		
+			printf("Name\n");
+			gets(s[i].name);
+			printf("Class\n");
+			gets(s[i].group);
+			printf("Section\n");
+			gets(s[i].sec);
+			printf("Gender\n");
+			gets(s[i].gender);
+		
+	}
+	
+	for(i=0;i<10;i++)
+	{
+		printf("Student %d:\n",i+1);
+		
+		printf("Name: %s\t Gender: %s\n",s[i].name,s[i].gender);
+		
+		printf("Class: %s\t Section: %s\n\n",s[i].group,s[i].sec);
+	}
+}

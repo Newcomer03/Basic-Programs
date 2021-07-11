@@ -1,0 +1,338 @@
+Program1:-
+#include<stdio.h>
+
+main()
+{
+	int arr[50],size,i,large,small;
+	
+	printf("Enter the size of array 'Not more than 50'\n");
+	scanf("%d",&size);
+	printf("Enter the Values\n");
+	
+	for(i=0;i<size;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	
+	large = arr[0];
+	small = arr[0];
+	for(i=1;i<size;i++)
+	{
+			if(large<arr[i])
+			{
+				large = arr[i];
+			}
+			
+			if(small>arr[i])
+			{
+				small = arr[i];
+			}	
+	}
+	
+	printf("The largest among the given numbers is : %d\n",large);
+	printf("The smallest among the given numbers is : %d",small);
+}
+
+Program2:-
+#include<stdio.h>
+
+main()
+{
+	int arr1[50],arr2[50],size,i;
+	
+	printf("Enter the size of array 'Not more than 50'\n");
+	scanf("%d",&size);
+	printf("Enter the Values\n");
+	
+	for(i=0;i<size;i++)		//initializing the first array
+	{
+		scanf("%d",&arr1[i]);
+	}
+	
+	
+	for(i=size;i>0;i--)		//initializing second array
+	{//used to reverse the first array
+		arr2[i-1] = arr1[size-i];
+	}
+}
+
+Program3:-
+#include<stdio.h>
+
+main()
+{
+	int arr[50],size,i,temp;
+	
+	printf("Enter the size of array 'Not more than 50'\n");
+	scanf("%d",&size);
+	printf("Enter the Values\n");
+	
+	for(i=0;i<size;i++)		//initializing the array
+	{
+		scanf("%d",&arr[i]);
+	}
+	
+	
+	for(i=0;i<=size/2;i++)
+	{//used to reverse the array
+		temp = arr[i];
+		arr[i] = arr[size-(i+1)];
+		arr[size-(i+1)] = temp;
+	}
+	
+	printf("Reversed Version\n");
+	
+	for(i=0;i<size;i++)		
+	{
+		printf("%d ",arr[i]);
+	}
+}
+
+Program4:-
+#include<stdio.h>
+
+main()
+{
+	int arr1[50],arr2[50],temp,size,i,j;
+	
+	printf("Enter the size of array 'Not more than 50'\n");
+	scanf("%d",&size);
+	printf("Enter the Values\n");
+	
+	for(i=0;i<size;i++)		//initializing the first array
+	{
+		scanf("%d",&arr1[i]);
+	}
+	
+	
+	for(i=0;i<size;i++)	
+	{//here we arrange all the elements in descending order and store in arr2[]
+		arr2[i] = arr1[i];
+		for(j=i;j<size;j++)
+		{
+			if(arr2[i]<arr1[j])
+			{
+				temp = arr2[i];
+				arr2[i] = arr1[j];
+				arr1[j] = temp;
+			}
+		}
+	}
+	printf("Descending Order\n");
+	
+	for(i=0;i<size;i++)		
+	{
+		printf("%d ",arr2[i]);
+	}
+}
+
+Program5:-
+#include<stdio.h>
+
+main()
+{
+	int arr[50],sum=0,size,i;
+	
+	printf("Enter the size of array 'Not more than 50'\n");
+	scanf("%d",&size);
+	printf("Enter the Values\n");
+	
+	for(i=0;i<size;i++)
+	{
+		scanf("%d",&arr[i]);
+		sum = sum + arr[i];
+	}
+	printf("The Sum of the numbers in the array is = %d",sum);
+}
+
+Program6:-
+#include<stdio.h>
+
+main()
+{
+	int arr[50],count=0,size,i;
+	
+	printf("Enter the size of array 'Not more than 50'\n");
+	scanf("%d",&size);
+	printf("Enter the Values\n");
+	
+	for(i=0;i<size;i++)
+	{
+		scanf("%d",&arr[i]);
+		if(arr[i]%2==0)
+		{
+			count++;
+		}
+	}
+	printf("There are %d even numbers in the array",count);
+}
+
+Program7:-
+#include<stdio.h>
+
+int checkPrime(int);
+
+main()
+{
+	int arr[50],count=0,size,i;
+	
+	printf("Enter the size of array 'Not more than 50'\n");
+	scanf("%d",&size);
+	printf("Enter the Values\n");
+	
+	for(i=0;i<size;i++)
+	{
+		scanf("%d",&arr[i]);
+		
+	}
+	
+	printf("The Prime Numbers are :- ");
+	
+	for(i=0;i<size;i++)
+	{
+		count = checkPrime(arr[i]);
+		if(count==2)
+		{
+			printf("%d ",arr[i]);
+		}	
+	}
+}
+
+int checkPrime(int no)
+{
+	int x, count=0;
+	x=1;
+	
+	while(x<=no)
+	{
+		if((no%x)==0)
+		{
+			count++;
+		}
+		x++;
+	}
+	return(count);
+}
+
+Program8:-
+#include<stdio.h>
+
+main()
+{
+	int arr[50],count=0,size,i,element;
+	
+	printf("Enter the size of array 'Not more than 50'\n");
+	scanf("%d",&size);
+	
+	printf("Enter the Values\n");
+	
+	for(i=0;i<size;i++)	
+	{
+		scanf("%d",&arr[i]);
+	}
+	
+	printf("Enter the element you want to search for\n");
+	scanf("%d",&element);
+	
+	for(i=0;i<size;i++)	
+	{
+		if(element==arr[i])
+		{
+			count++;
+		}
+	}
+	
+	if(count!=0)
+	{
+		printf("The element'%d' is present in the array\n",element);
+	}
+	else
+	{
+		printf("The element'%d' is not present in the array\n",element);
+	}
+
+}
+
+Program9:-
+#include<stdio.h>
+
+main()
+{
+	int arr1[50][50],arr2[50][50],arr3[50][50],row,col,i,j;
+	
+	printf("Enter the rows and columns of the array 'Not more than 50 each'\n");
+	scanf("%d%d",&row,&col);
+	printf("\nEnter the Values for first array\n\n");
+	
+	for(i=0;i<row;i++)		//here we make the 1st 2-d array
+	{
+		printf("Enter the Values for row %d\n",i+1);
+		for(j=0;j<col;j++)
+		{
+			scanf("%d",&arr1[i][j]);
+		}
+	}
+	printf("Enter the Values for second array\n\n");
+	
+	for(i=0;i<row;i++)		//here we make the 2nd 2-d array
+	{
+		printf("Enter the Values for row %d\n",i+1);
+		for(j=0;j<col;j++)
+		{
+			scanf("%d",&arr2[i][j]);
+		}
+	}
+	printf("The New 2-d Array is:\n");
+	
+	for(i=0;i<row;i++)		//here we make the new 2-d array by adding the above two 2-d arrays
+	{
+		for(j=0;j<col;j++)
+		{
+			arr3[i][j] = arr1[i][j] + arr2[i][j];
+			printf("%d ",arr3[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+Program10:-
+#include<stdio.h>
+
+main()
+{//this code works for same as well as different number of rows and columns
+	int arr1[50][50],arr2[50][50],row,col,i,j;
+	
+	printf("Enter the rows and columns of the array 'Not more than 50 each'\n");
+	scanf("%d%d",&row,&col);
+	printf("\nEnter the Values for first array\n\n");
+	
+	for(i=0;i<row;i++)
+	{
+		printf("Enter the Values for row %d\n",i+1);
+		for(j=0;j<col;j++)
+		{
+			scanf("%d",&arr1[i][j]);
+		}
+	}
+
+	
+	for(i=0;i<col;i++)
+	{//this block makes the transpose
+		
+		for(j=0;j<row;j++)
+		{
+			arr2[i][j] = arr1[j][i];
+		}
+	}
+	
+	printf("The Transposed array is:\n");
+	
+	for(i=0;i<col;i++)
+	{//this block prints the transpose
+		for(j=0;j<row;j++)
+		{
+			printf("%d ",arr2[i][j]);
+		}
+		printf("\n");
+	}
+}
