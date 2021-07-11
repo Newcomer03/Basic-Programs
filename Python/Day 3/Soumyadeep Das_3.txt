@@ -1,0 +1,93 @@
+1.
+low = int(input("Enter the starting Value:\n"))
+high = int(input("Enter the ending Value:\n"))
+
+for i in range(low,high+1):
+    sum = 0
+    t1 = i
+    while (t1!=0):
+        digit = t1%10
+        sum = sum + (digit**3)
+        t1 = t1//10
+    if i==sum:
+        print(i,end=",")
+
+2.
+low = int(input("Enter the starting Value:\n"))
+high = int(input("Enter the ending Value:\n"))
+if low == 0:
+    low = low+2
+if low== 1:
+    low = low+1
+for i in range(low,high):
+       count = 0
+       for j in range(2,i):
+           if i%j == 0:
+               count += 1
+       if count == 0:
+           print(i,end=",")
+
+3.
+row = int(input("Enter the no. of Rows\n"))
+
+for i in range(1,row+1):
+    for j in range(1,i+1):
+        if(j<=i):
+            print(i,end=" ")
+    print("")
+
+4.
+row = int(input("Enter the no. of Rows\n"))
+
+for i in range(1,row+1):
+    for j in range(1,i+1):
+        if(j<=i):
+            print(j,end=" ")
+    print("")
+
+5.
+row = int(input("Enter the no. of Rows\n"))
+for i in range(row,0,-1):
+    for j in range(1,row+1):
+        if(j>=i):
+            print((row+1-i),end=" ")
+        else:
+            print(" ",end=" ")
+    print("")
+
+6.
+row = int(input("Enter the no. of Rows\n"))
+
+for i in range(1,row+1):
+    for j in range(1,i+1):
+            print(chr(64+j),end=" ")
+    print("")
+
+7.
+row = int(input("Enter the no. of Rows\n"))
+
+for i in range(row,0,-1):
+    for j in range(1,row+1):
+        if(j<=i):
+            print(i,end=" ")
+        else:
+            print(" ",end=" ")
+    print("")
+
+8.
+row = int(input("Enter the no. of Rows\n"))
+for i in range(row,0,-1):
+    if i%2 != 0:
+        for space in range(row,i,-1):
+            print(" ",end="")
+    else:
+        for space in range(row-1,i,-1):
+            print(" ",end="")
+    for j in range(0,i):
+        if i%2 != 0:
+            print(i,end="")
+            print(" ",end="")
+        else:
+            print(" ",end="")
+            print(i,end="")
+    print("")

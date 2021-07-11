@@ -1,0 +1,137 @@
+1.
+inp = input("Press c if you want to give input in celsius or else press f\n")
+itemp = int(input("Enter the Temperature\n"))
+if (inp == 'c'):
+    ftemp = (itemp * (9/5)) + 32
+    itemp = str(itemp)
+    ftemp = str(ftemp)
+    print(itemp + " degree C is " + ftemp + " in Fahrenheit")
+else:
+    ftemp = (itemp - 32) * (5/9)
+    itemp = str(itemp)
+    ftemp = str(ftemp)
+    print(itemp + "F is " + ftemp + " in Celsius")
+
+2.
+day = int(input("Input birthday: "))
+month = input("Input month of birth(e.g. march,july,etc): ")
+
+if month == 'december':
+    sign = 'Sagittarius' if (day<22) else 'Capricorn'
+    print("Your Astrological sign is: "+sign)
+
+elif month == 'january':
+    sign = 'Capricorn' if (day<20) else 'Aquarius'
+    print("Your Astrological sign is: "+sign)
+    
+elif month == 'february':
+    sign = 'Aquarius' if (day<20) else 'Pisces'
+    print("Your Astrological sign is: "+sign)
+
+elif month == 'march':
+    sign = 'Pisces' if (day<21) else 'Aries'
+    print("Your Astrological sign is: "+sign)
+
+elif month == 'april':
+    sign = 'Aries' if (day<21) else 'Taurus'
+    print("Your Astrological sign is: "+sign)
+
+elif month == 'may':
+    sign = 'Taurus' if (day<22) else 'Gemini'
+    print("Your Astrological sign is: "+sign)
+
+elif month == 'june':
+    sign = 'Gemini' if (day<22) else 'Cancer'
+    print("Your Astrological sign is: "+sign)
+
+elif month == 'july':
+    sign = 'Cancer' if (day<23) else 'Leo'
+    print("Your Astrological sign is: "+sign)
+
+elif month == 'august':
+    sign = 'Leo' if (day<24) else 'Virgo'
+    print("Your Astrological sign is: "+sign)
+
+elif month == 'september':
+    sign = 'Virgo' if (day<24) else 'Libra'
+    print("Your Astrological sign is: "+sign)
+
+elif month == 'october':
+    sign = 'Libra' if (day<24) else 'Scorpio'
+    print("Your Astrological sign is: "+sign)
+
+elif month == 'november':
+    sign = 'Scorpio' if (day<23) else 'Sagittarius'
+    print("Your Astrological sign is: "+sign)
+
+else:
+    print("Invalid Month Entered")
+
+3.
+n = int(input("Enter a Number\n"))
+if n<=17:
+    print(17-n)
+else:
+    print(n-17)*2
+
+4.
+st = input("Enter a String\n")
+if len(st) >= 2 and st[:2] == "Is":
+    print(st)
+else:
+    print("Is" + st)
+
+5.
+x = int(input("Enter the value of x\n"))
+y = int(input("Enter the value of y\n"))
+
+res = (x*x) + (y*y) + (2*x*y)
+print(res)
+
+6.
+p = float(input("Enter Principal Amount\n"))
+r = int(input("Enter Rate of Interest\n"))
+t = int(input("Enter Time in Years\n"))
+
+ci = p*((1+(r/100))**t)
+
+a = p + ci
+a = str(a)
+print("The future amount is = "+a)
+
+7.
+import math
+
+x1 = int(input("Enter the x coordinate of 1st point"))
+y1 = int(input("Enter the y coordinate of 1st point"))
+x2 = int(input("Enter the x coordinate of 2nd point"))
+y2 = int(input("Enter the y coordinate of 2nd point"))
+
+dist = math.sqrt((x1-x2)**2 + (y1-y2)**2)
+print("The distance between the given points is: ",dist)
+
+8.
+x = int(input("Enter the 1st no."))
+y = int(input("Enter the 2nd no."))
+z = int(input("Enter the 3rd no."))
+a1 = max(x,y,z)
+a2 = min(x,y,z)
+a3 = (x+y+z)-(a1+a2)
+a1 = str(a1)
+a2 = str(a2)
+a3 = str(a3)
+print(a1+">"+a3+">"+a2)
+
+9.
+import sys
+print("Float value Information: ",sys.float_info)
+print("\nInteger value Information: ",sys.float_info)
+print("\nMaximum size of an Integer: ",sys.maxsize)
+
+10.
+x = 'true'
+x = int(x == 'true')
+print(x)
+x = 'abcd'
+x = int(x== 'true')
+print(x)

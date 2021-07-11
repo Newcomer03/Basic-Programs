@@ -1,0 +1,293 @@
+>>>>>>>With While Loop
+
+1.
+num = int(input("Enter the Number\n"))
+temp = num
+sum = 0
+while (num!=0):
+    digit = num%10
+    sum += digit
+    num = num //10
+print("The Sum of digits of ",temp," is ",sum)
+
+2.
+num = int(input("Enter the Number\n"))
+temp = num
+rev = 0
+while (num!=0):
+    digit = num%10
+    rev = rev*10 + digit
+    num = num //10
+print("The Reverse of ",temp," is ",rev)
+
+3.
+num = int(input("Enter the Number\n"))
+temp = num
+rev = 0
+while(temp!=0):
+    digit = temp%10
+    rev = rev*10 + digit
+    temp = temp//10
+print("The Reverse Of ",num," is ",rev)
+
+if rev==num:
+    print("The Given Number is a Palindrome Number")
+else:
+    print("The Given Number is not a Palindrome Number")
+
+4.
+num = int(input("Enter the Number\n"))
+rev = 0
+fact = 1
+c = 1
+while(c<=num):
+    fact = fact *c
+    c = c+1
+print("The Factorial of ",num," is ",fact)
+
+5.
+num = int(input("Enter the Number\n"))
+temp = num
+sum = 0
+while (num!=0):
+    digit = num%10
+    sum += digit**3
+    num = num //10
+if temp == sum:
+    print(temp," is an Armstrong Number")
+else:
+    print(temp," is not an Armstrong Number")
+
+6.
+num1 = int(input("Enter the 1st Number\n"))
+temp1 = num1
+num2 = int(input("Enter the 2nd Number\n"))
+temp2 = num2
+
+while temp1 != temp2:
+    if temp1>temp2:
+        temp1 = temp1-temp2
+    else:
+        temp2 = temp2-temp1
+gcd = temp1 #it can be either temp1 or temp2
+lcm = (num1*num2)//gcd
+
+print("GCD= ",gcd)
+print("LCM= ",lcm)
+
+7.
+num = int(input("Enter a Number\n"))
+temp = num
+
+if num<0:
+    print("Enter a Positive Number")
+else:
+    sum = 0
+    while(num>0):
+        sum  = sum + num
+        num = num-1
+    print("The Sum is = ",sum)
+
+8.
+terms = int(input("How many terms do you want?\n"))
+
+#first two terms are 0 and 1
+n1=0
+n2=1
+count = 2
+
+if (terms<=0):
+    print("Please enter a positive number")
+elif (terms == 1):
+    print("Fibonacci Sequence")
+    print(n1)
+elif (terms == 2):
+    print("Fibonacci Sequence")
+    print(n1,",",n2)
+else:
+    print("Fibonacci Sequence")
+    print(n1,",",n2,end=" ,")
+    while count<terms:
+        nth = n1+n2
+        n1 = n2
+        n2 = nth
+        count += 1
+        if count<terms:
+            print(nth,end=" ,")
+        else:
+            print(nth)
+
+9.
+num = int(input("Enter the Number whose multiplication table you want:\n"))
+i=1
+
+while(i<10):
+    print(num," x ",i," =\t",num*i)
+    i += 1
+print(num," x ",10,"=\t",num*10)
+
+10.
+num = int(input("Enter a Number: "))
+c = 0   #counter variable
+i = 2
+if num > 1:
+    while(i<num):
+        if (num%i)==0:
+            c += 1
+        i += 1
+if c==0:
+    print(num," is a Prime Number")
+else:
+    print(num," is not a Prime Number")
+
+
+>>>>>>>With For Loop
+
+1.
+num = int(input("Enter the Number\n"))
+temp = num
+sum = 0
+for i in range(temp):
+    dig = temp%10
+    sum = sum + dig
+    temp = temp//10
+    if temp==0:
+        break
+    
+print("The Sum of digits of ",num," is ",sum)
+
+2.
+num = int(input("Enter the Number\n"))
+temp = num
+rev = 0
+for i in range(temp):
+    digit = temp%10
+    rev = rev*10 + digit
+    temp = temp //10
+    if temp==0:
+        break
+print("The Reverse of ",num," is ",rev)
+
+3.
+num = int(input("Enter the Number\n"))
+temp = num
+rev = 0
+for i in range(temp):
+    digit = temp%10
+    rev = rev*10 + digit
+    temp = temp//10
+    if temp == 0:
+        break
+print("The Reverse Of ",num," is ",rev)
+
+if rev==num:
+    print("The Given Number is a Palindrome Number")
+else:
+    print("The Given Number is not a Palindrome Number")
+
+4.
+num = int(input("Enter the Number\n"))
+rev = 0
+fact = 1
+c = 1
+for i in range(c,num+1):
+    fact = fact *i
+    
+print("The Factorial of ",num," is ",fact)
+
+5.
+num = int(input("Enter the Number\n"))
+temp = num
+sum = 0
+for i in range(num):
+    digit = num%10
+    sum += digit**3
+    num = num //10
+    if num==0:
+        break
+    
+if temp == sum:
+    print(temp," is an Armstrong Number")
+else:
+    print(temp," is not an Armstrong Number")
+
+6.
+num1 = int(input("Enter the 1st Number\n"))
+temp1 = num1
+num2 = int(input("Enter the 2nd Number\n"))
+temp2 = num2
+m = max(temp1,temp2)
+for i in range(0,m):
+    if temp1!=temp2:
+        if temp1>temp2:
+            temp1 = temp1-temp2
+        else:
+            temp2 = temp2-temp1
+    else:
+        break
+gcd = temp1 #it can be either temp1 or temp2
+lcm = (num1*num2)//gcd
+
+print("GCD= ",gcd)
+print("LCM= ",lcm)
+
+7.
+num = int(input("Enter a Number\n"))
+temp = num
+
+if num<0:
+    print("Enter a Positive Number")
+else:
+    sum = 0
+    for i in range(num,0,-1):
+        sum  = sum + i
+    print("The Sum is = ",sum)
+
+8.
+terms = int(input("How many terms do you want?\n"))
+
+#first two terms are 0 and 1
+n1=0
+n2=1
+count = 2
+
+if (terms<=0):
+    print("Please enter a positive number")
+elif (terms == 1):
+    print("Fibonacci Sequence")
+    print(n1)
+elif (terms == 2):
+    print("Fibonacci Sequence")
+    print(n1,",",n2)
+else:
+    print("Fibonacci Sequence")
+    print(n1,",",n2,end=" ,")
+    for i in range(count,terms):
+        nth = n1+n2
+        n1 = n2
+        n2 = nth
+        i += 1
+        if i<terms:
+            print(nth,end=" ,")
+        else:
+            print(nth)
+
+9.
+num = int(input("Enter the Number whose multiplication table you want:\n"))
+
+
+for i in range(1,10):
+    print(num," x ",i," =\t",num*i)
+print(num," x ",10,"=\t",num*10)
+
+10.
+num = int(input("Enter a Number: "))
+c = 0   #counter variable
+if num > 1:
+    for i in range(2,num):
+        if (num%i)==0:
+            c += 1
+if c==0:
+    print(num," is a Prime Number")
+else:
+    print(num," is not a Prime Number")
